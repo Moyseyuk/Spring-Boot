@@ -1,0 +1,6 @@
+hibernate:
+  connection.driver_class: org.postgresql.Driver
+  connection.url: jdbc:postgresql://localhost:5432/postgres
+  connection.username: postgres
+  connection.password: 3476
+  dialect: org.hibernate.dialect.PostgreSQLDialect
