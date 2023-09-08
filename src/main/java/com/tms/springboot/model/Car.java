@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -28,10 +29,25 @@ public class Car {
     private Date updated;
     @Version
     private int version;
-
+    @ManyToMany(mappedBy = "cars")
+    private List<Region> regions;
     public Car(CARMODEL model, Date dateOfIssue, boolean availability) {
         this.model = model;
         this.dateOfIssue = dateOfIssue;
         this.availability = availability;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "number=" + number +
+                ", model=" + model +
+                ", dateOfIssue=" + dateOfIssue +
+                ", availability=" + availability +
+                ", created=" + created +
+                ", updated=" + updated +
+                ", version=" + version +
+                ", regions=" + regions +
+                '}';
     }
 }
